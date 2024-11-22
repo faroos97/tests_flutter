@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'notification_test.dart';
+/*import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +10,122 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Notification Test',
+      title: 'Compatibilité Multiplateforme',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NotificationTest(),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Compatibilité Multiplateforme'),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Test de Compatibilité Multiplateforme',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              'Flutter est exécuté ici!',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+*/
+
+/*import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+class NotificationTest extends StatefulWidget {
+  @override
+  _NotificationTestState createState() => _NotificationTestState();
+}
+
+class _NotificationTestState extends State<NotificationTest> {
+  late FlutterLocalNotificationsPlugin localNotifications;
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialiser les notifications
+    var androidInitialize = const AndroidInitializationSettings('@mipmap/ic_launcher');
+    var iOSInitialize = const DarwinInitializationSettings(); // Correction ici
+    var initializationSettings =
+        InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
+    localNotifications = FlutterLocalNotificationsPlugin();
+    localNotifications.initialize(initializationSettings);
+  }
+
+  Future<void> showNotification() async {
+    var androidDetails = const AndroidNotificationDetails(
+      'channelId', // ID unique pour le canal
+      'channelName', // Nom du canal
+      importance: Importance.high,
+      priority: Priority.high,
+    );
+    var iOSDetails = const DarwinNotificationDetails(); // Correction ici
+    var generalNotificationDetails =
+        NotificationDetails(android: androidDetails, iOS: iOSDetails);
+
+    await localNotifications.show(
+      0, // ID de la notification
+      'Rappel d’hydratation 💧',
+      'Il est temps de boire un verre d’eau !',
+      generalNotificationDetails,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Test de Notification'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: showNotification,
+          child: const Text('Envoyer une notification'),
+        ),
+      ),
+    );
+  }
+}
+*/
+
+
+import 'package:flutter/material.dart';
+import 'chart_test.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Test Graphiques',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ChartTest(),
     );
   }
 }
