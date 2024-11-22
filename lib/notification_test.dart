@@ -14,7 +14,7 @@ class _NotificationTestState extends State<NotificationTest> {
     super.initState();
     // Initialiser les notifications
     var androidInitialize = const AndroidInitializationSettings('@mipmap/ic_launcher');
-    var iOSInitialize = const DarwinInitializationSettings();
+    var iOSInitialize = const DarwinInitializationSettings(); // Correction ici
     var initializationSettings =
         InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
     localNotifications = FlutterLocalNotificationsPlugin();
@@ -28,7 +28,7 @@ class _NotificationTestState extends State<NotificationTest> {
       importance: Importance.high,
       priority: Priority.high,
     );
-    var iOSDetails = const DarwinNotificationDetails();
+    var iOSDetails = const DarwinNotificationDetails(); // Correction ici
     var generalNotificationDetails =
         NotificationDetails(android: androidDetails, iOS: iOSDetails);
 
